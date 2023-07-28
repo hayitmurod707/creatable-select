@@ -62,7 +62,7 @@ const defaultOptions = {
          backgroundColor: 'rgb(255, 255, 255)',
          border: isFocused
             ? '1.5px solid #0071f2'
-            : '1.5px solid rgba(137, 141, 166, 0.3)',
+            : '1.5px solid rgba(137, 141, 166, 0.5)',
          borderRadius: 12,
          boxShadow: 'none',
          color: 'rgb(37, 42, 59)',
@@ -74,22 +74,30 @@ const defaultOptions = {
          ':hover': {
             border: isFocused
                ? '1.5px solid #0071f2'
-               : '1.5px solid rgba(137, 141, 166, 0.3)',
+               : '1.5px solid rgba(137, 141, 166, 0.5)',
          },
       }),
       placeholder: styles => ({
          ...styles,
+         alignItems: 'center',
          color: 'rgb(105, 111, 133)',
-         fontSize: 15,
+         display: 'flex',
+         fontSize: 17,
          fontWeight: 500,
+         height: '100%',
+         left: 0,
+         padding: '0 0 0 16px',
+         position: 'absolute',
+         top: 0,
+         width: '100%',
       }),
       input: (styles, { hasValue }) => ({
          ...styles,
          fontSize: 17,
          fontWeight: 500,
          height: 38,
-         padding: hasValue ? '0 0 0 3px' : '0 0 0 10px',
          margin: '0 2px',
+         padding: hasValue ? '0 0 0 2px' : '0 0 0 16px',
       }),
       valueContainer: styles => ({
          ...styles,
@@ -121,8 +129,8 @@ const defaultOptions = {
          padding: 0,
          width: 22,
          svg: {
-            width: 16,
             height: 16,
+            width: 16,
          },
          ':hover': {
             backgroundColor: 'rgb(255, 0, 0)',
@@ -135,6 +143,7 @@ const CreatableSelect = ({
    inputValue = '',
    onChange,
    onInputChange,
+   placeholder,
    value = [],
 }) => {
    const onKeyDown = e => {
@@ -156,19 +165,21 @@ const CreatableSelect = ({
          onChange={onChange}
          onInputChange={onInputChange}
          onKeyDown={onKeyDown}
-         placeholder=''
+         placeholder={placeholder}
          value={value}
       />
    );
 };
 CreatableSelect.defaultProps = {
    inputValue: '',
+   placeholder: 'Create',
    value: [],
 };
 CreatableSelect.propTypes = {
    inputValue: string,
    onChange: func,
    onInputChange: func,
+   placeholder: string,
    value: array,
 };
 export default CreatableSelect;
