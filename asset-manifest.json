@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/creatable-select/static/css/main.62386d35.css",
+    "main.js": "/creatable-select/static/js/main.7defc24d.js",
+    "static/media/Gilroy-Medium.woff2": "/creatable-select/static/media/Gilroy-Medium.e2130cf5bbb93f1cc9e0.woff2",
+    "index.html": "/creatable-select/index.html",
+    "main.62386d35.css.map": "/creatable-select/static/css/main.62386d35.css.map",
+    "main.7defc24d.js.map": "/creatable-select/static/js/main.7defc24d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62386d35.css",
+    "static/js/main.7defc24d.js"
+  ]
+}
